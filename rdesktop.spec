@@ -1,11 +1,11 @@
 Summary:	RDP client for accessing Windows NT Terminal Server
 Name:		rdesktop
-Version:	1.7.1
+Version:	1.8.1
 Release:	1
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://downloads.sourceforge.net/rdesktop/%{name}-%{version}.tar.gz
-# Source0-md5:	c4b39115951c4a6d74f511c99b18fcf9
+# Source0-md5:	f5382c5c85b0d2cc88b9b1aa9bbf1356
 URL:		http://www.rdesktop.org/
 BuildRequires:	libao-devel
 BuildRequires:	openssl-devel
@@ -23,8 +23,9 @@ Citrix ICA, no server extensions are required.
 
 %build
 %configure \
+	--disable-credssp	\
+	--disable-smartcard	\
 	--with-ipv6		\
-	--with-libao		\
 	--with-sound=libao
 %{__make}
 
